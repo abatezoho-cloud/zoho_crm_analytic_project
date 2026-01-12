@@ -1,1 +1,5 @@
 requests
+os
+pydantic_settings
+json
+datetime
