@@ -29,6 +29,8 @@ def analytics_data_keratoconus(workspace_id: str,view:str):
     response = requests.get(url_to_get_analytics, headers=headers,params=params)
     response_data = response.json()
     data = response_data.get('data',[])
+    if len(data)<=0:
+        return None
     data_json= {"json":data}
 
     with open(file_path,'w') as f:
@@ -63,6 +65,8 @@ def analytics_data_vision_therapy(workspace_id: str,view:str):
     response = requests.get(url_to_get_analytics, headers=headers,params=params)
     response_data = response.json()
     data = response_data.get('data',[])
+    if len(data)<=0:
+        return None
     data_json= {"json":data}
 
     with open(file_path,'w') as f:

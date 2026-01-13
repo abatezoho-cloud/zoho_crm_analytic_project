@@ -23,7 +23,7 @@ def pushing_crm(data: list,set_len=100):
         push_data = {"data":sub_data}
         
         resp= requests.post(url_to_push_kera,headers=header,json=push_data)
-        print(resp.text)
+        print(resp.status_code)
 
 
         if len(sub_data)<set_len:
